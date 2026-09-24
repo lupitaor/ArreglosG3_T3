@@ -19,7 +19,14 @@
         public bool EstaVacio => _tope == 0;
 
         //Métodos
-        //Método llenar
+        public void Llenar()
+        {
+            Llenar(1, 100);
+
+        }
+
+
+        //Método llenar con parametros
         public void Llenar(int minimo, int maximo)
         {
             Random random = new Random();
