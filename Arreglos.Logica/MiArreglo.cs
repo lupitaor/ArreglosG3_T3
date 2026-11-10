@@ -141,6 +141,29 @@
             _tope--;
         }
 
+
+        public MiArreglo ObtenerPares()
+        {
+            int contadorPares = 0;
+            for (int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    contadorPares++;
+                }
+            }
+            var arregloPares = new MiArreglo(contadorPares);
+            for (int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    arregloPares.Agregar(_arreglo[i]);
+                }
+            }
+            return arregloPares;
+        }
+
+
         //Método ToString
         public override string ToString()
         {
@@ -152,7 +175,6 @@
             string salida = string.Empty;
             for (int i = 0; i < _tope; i++)
             {
-
                 salida += $"{_arreglo[i]}\t";
                 contador++;
                 if (contador > 9)

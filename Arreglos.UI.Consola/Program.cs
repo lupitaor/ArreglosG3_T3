@@ -1,6 +1,6 @@
 ﻿using Arreglos.Logica;
 
-Console.WriteLine("Arreglos\n");
+//Console.WriteLine("Arreglos\n");
 
 //--------------------------------------
 //MiArreglo oMyArreglo = new(5);
@@ -38,18 +38,47 @@ Console.WriteLine("Arreglos\n");
 
 MiArreglo oMyArreglo = new(100);
 
-oMyArreglo.Llenar();
 
-//oMyArreglo.ToString();
-Console.WriteLine("\nArreglo desordenado");
-Console.WriteLine(oMyArreglo);
 
-Console.WriteLine("\nArreglo ordenado ascendente");
-oMyArreglo.Ordenar();
-Console.WriteLine(oMyArreglo);
 
-Console.WriteLine("\nArreglo ordenado descendente");
-oMyArreglo.Ordenar(false);
-Console.WriteLine(oMyArreglo);
+try
+{
+    Console.WriteLine("\nArreglo\n");
+    oMyArreglo.Llenar();
+    Console.WriteLine(oMyArreglo);
+    Console.ReadKey();
+
+    Console.WriteLine("\nPares\n");
+    var verPares = oMyArreglo.ObtenerPares();
+    Console.WriteLine(verPares);
+    Console.ReadKey();
+
+    Console.WriteLine("\nPares ordenados\n");
+    verPares.Ordenar(true);
+    Console.WriteLine(verPares);
+    Console.ReadKey();
+
+
+}
+catch (Exception)
+{
+
+    throw;
+}
+
+
+
+
+////oMyArreglo.ToString();
+//Console.WriteLine("\nArreglo desordenado");
+//Console.WriteLine(oMyArreglo);
+
+//Console.WriteLine("\nArreglo ordenado ascendente");
+//oMyArreglo.Ordenar();
+//Console.WriteLine(oMyArreglo);
+
+//Console.WriteLine("\nArreglo ordenado descendente");
+//oMyArreglo.Ordenar(false);
+//Console.WriteLine(oMyArreglo);
 
 Console.ReadKey();
