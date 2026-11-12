@@ -36,34 +36,47 @@
 
 //--------------------------------------
 
-MiArreglo oMyArreglo = new(100);
-
-
-
+MiArreglo oMyArreglo = new(50000);
 
 try
 {
-    Console.WriteLine("\nArreglo\n");
-    oMyArreglo.Llenar();
+    Console.WriteLine("\nArreglo inicial\n");
+    var tiempo1 = DateTime.Now;
+    oMyArreglo.Llenar(1, 999999);
     Console.WriteLine(oMyArreglo);
+    var tiempo2 = DateTime.Now;
+    var restaTiempo = tiempo2 - tiempo1;
+
+
+
+    Console.WriteLine($"\nTiempo transcurrido:{restaTiempo.Minutes} minutos, {restaTiempo.Seconds} segundos, {restaTiempo.Milliseconds} milisegundos, {restaTiempo.Nanoseconds} nanosegundos");
+
     Console.ReadKey();
 
-    Console.WriteLine("\nPares\n");
-    var verPares = oMyArreglo.ObtenerPares();
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+    //Console.WriteLine("\nPares\n");
+    //var verPares = oMyArreglo.ObtenerPares();
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
-    Console.WriteLine("\nPares ordenados\n");
-    verPares.Ordenar(true);
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+    //Console.WriteLine("\nPares ordenados\n");
+    //verPares.Ordenar(true);
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
-    Console.WriteLine("\nPrimos\n");
+    Console.WriteLine("\nObtener primos\n");
+    var tiempo3 = DateTime.Now;
     var verPrimos = oMyArreglo.ObtenerPrimos();
     Console.WriteLine(verPrimos);
+    var tiempo4 = DateTime.Now;
+
+    var restaTiempo2 = tiempo4 - tiempo3;
+
+
+
+    Console.WriteLine($"\nTiempo transcurrido:{restaTiempo2.Minutes} minutos, {restaTiempo2.Seconds} segundos, {restaTiempo2.Milliseconds} milisegundos, {restaTiempo2.Nanoseconds} nanosegundos");
     Console.ReadKey();
 
-    Console.WriteLine("\nPrimos ordenados\n");
+    Console.WriteLine("\nPrimos ordenados burbuja\n");
     verPrimos.Ordenar();
     Console.WriteLine(verPrimos);
     Console.ReadKey();
@@ -72,7 +85,6 @@ try
 }
 catch (Exception ex)
 {
-
     Console.WriteLine(ex.Message);
 }
 
